@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        .A {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* centers horizontally */
+            width: 100%;
+            /* take full screen */
+            /* padding: 20px; */
+        }
+
+        .card {
+            border: none !important;
+            width: 80%;
+            /* or use Bootstrap class w-75 */
+            max-width: 900px;
+            /* keeps it from stretching too wide */
+            /* margin-bottom: 20px; */
+        }
+    </style> -->
+    <style>
+        .A {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* centers horizontally */
+            /* take full screen */
+            /* padding: 20px; */
+            background-color: #FAF3FF;
+            gap: 0;
+        }
+
+        /* Banner card (Genesis to Revelation) */
+        .card.bg-dark {
+            border: none;
+            /* border-radius: 12px; */
+            overflow: hidden;
+        }
+
+        .card.bg-dark .card-img-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .card.bg-dark h1 {
+            color: #FFD369;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .card.bg-dark p {
+            color: #f8f9fa;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* General cards */
+        .card {
+            background-color: #FAF3FF;
+            /* border-radius: 15px; */
+            /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) */
+            /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+        }
+
+        .card:hover {
+            /* transform: translateY(-1px); */
+            /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); */
+        }
+
+        .card-title {
+            color: #5E3A87;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .card-text {
+            color: #3c2a4d;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Key sections list */
+        .key-sections h5 {
+            color: #5E3A87;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .key-sections ul {
+            padding-left: 20px;
+            list-style: square;
+        }
+
+        .key-sections ul li {
+            color: #2E1F47;
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .key-sections ul li:hover {
+            color: #FFD369;
+        }
+
+        /* Footer */
+        footer {
+            background: #3c2a4d;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="bookmark-plus-fill.svg" height="30px">&nbsp;About Bible</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About the Bible</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Books of Bible</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Bible Study</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Daily Devotion</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Prayers</a></li>
+                            <li><a class="dropdown-item" href="#">Bible Verses</a></li>
+                            <li><a class="dropdown-item" href="#">Commentaries</a></li>
+                            <li><a class="dropdown-item" href="#">Resources</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">All About Bible</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="A">
+        <div class="card bg-dark text-white" style="position: sticky; top: 0;width: 100vw;">
+            <img src="image.PNG" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h1 class="card-title">Genesis To Revelations</h1>
+                <p class="card-text">“Walk with us through Scripture — discovering the stories, the prophecies, and the
+                    truth of God’s Word, one book at a time.”</p>
+                <p class="card-text">Every book, Every chapter, Every verse</p>
+            </div>
+        </div>
+        <div class="card" style="border: none; width: 100vw;">
+            <div class="card-body text-center" style="color: #5E3A87;">
+                <h1>ABOUT BIBLE</h1>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">The Bible — A Living Book of Divine Truth</h3>
+                <p class="card-text fs-5">The Bible is more than a book — it is a divine library, a spiritual guide, and
+                    a
+                    historical record that has transformed billions of lives across centuries. Revered as the Word of
+                    God,
+                    it reveals God’s nature, His will for humanity, and His plan of redemption through Jesus Christ.</p>
+            </div>
+        </div>
+        <div class="card" style="border: none; width: 100vw;">
+            <div class="card-body fs-1">
+                <!-- <h1 class="card-title">Structure of the Bible</h1> -->
+                <p class="card-text fs-1">The Bible contains 66 books, divided into two major parts:</p>
+            </div>
+        </div>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body fs-5">
+                    <h4 class="card-title">The Old Testament (39 books)</h4>
+                    <p class="card-text fs-5">Written primarily in Hebrew (with some Aramaic).</p>
+                    <p class="card-text fs-5">Focuses on God’s covenant with Israel, the creation of the world, the law,
+                        history,
+                        poetry, and prophecy.</p>
+                    <li style="list-style-type: none;" class="key-sections">
+                        <h5>Key Sections:</h5>
+                        <ul>
+                            <li>The Pentateuch (Genesis to Deuteronomy) — The Law of Moses.</li>
+                            <li>Historical Books (Joshua to Esther) — Israel’s history.</li>
+                            <li>Poetry & Wisdom (Job to Song of Solomon) — Worship and human experience.</li>
+                            <li>Prophets (Isaiah to Malachi) — Warnings and promises from God.</li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body fs-5">
+                    <h4 class="card-title">The New Testament (27 books)</h4>
+                    <p class="card-text fs-5">Written in Greek.</p>
+                    <p class="card-text fs-5">Focuses on the life, death, and resurrection of Jesus Christ, and the
+                        growth of
+                        the
+                        early Church.</p>
+                    <li style="list-style-type: none;" class="key-sections">
+                        <h5>Key Sections:</h5>
+                        <ul>
+                            <li>The Gospels (Matthew to John) — Accounts of Jesus’ life and teachings.</li>
+                            <li>Acts of the Apostles — The early Church’s history.</li>
+                            <li>Epistles (Romans to Jude) — Letters to believers and churches.</li>
+                            <li>Revelation — A prophetic vision of the end times.</li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Timeline of the Bible:</h3>
+                <p class="card-text fs-5">Written over a span of 1,500 years.
+                    Around 1400 BC (Old Testament beginnings) to 100 AD (completion of the New Testament).
+                    Over 40 authors including kings, prophets, fishermen, shepherds, tax collectors, and doctors.</p>
+            </div>
+        </div>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body fs-5">
+                    <h4 class="card-title">Central Theme: God’s Redemption</h4>
+                    <p class="card-text fs-5">The Bible’s core message is redemption — how God created the world, how
+                        mankind fell into sin, and how God provides a way back to Him through Jesus Christ.</p>
+                    <ul style="list-style-type: square;">
+                        <li>Genesis shows the beginning of creation and humanity.</li>
+                        <li>Exodus to Malachi reveals God's relationship with Israel.</li>
+                        <li>The Gospels unveil the arrival of the Messiah — Jesus.</li>
+                        <li>The New Testament Epistles guide the Church.</li>
+                        <li>Revelation promises Jesus' return and a new heaven and earth.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body fs-5">
+                    <h4 class="card-title">Bible Translations:</h4>
+                    <p class="card-text fs-5">The Bible is the most translated book in the world.</p>
+                    <ul style="list-style-type: square;">
+                        <li>Portions of the Bible are available in over 3,500 languages.</li>
+                        <li>Full Bible translations exist in over 700 languages.</li>
+                        <li>Major English versions: KJV, NKJV, NIV, ESV, NLT, NASB, The Message, and many more.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body fs-5">
+                    <h4 class="card-title">The Bible's Impact:</h4>
+                    <ul style="list-style-type: square;">
+                        <li>Spiritual: Leads people to salvation, teaches morality, and helps develop a relationship
+                            with God.</li>
+                        <li>Cultural: Influences art, music, literature, laws, and language.</li>
+                        <li>Scientific and Historical: Provides historical records and timelines often used by
+                            archaeologists and historians.</li>
+                        <li>Educational: Used in education systems for centuries as a moral and literary foundation.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body fs-5">
+                    <h4 class="card-title">Interesting Facts About the Bible:</h4>
+                    <ul style="list-style-type: square;">
+                        <li>The longest book is Psalms.</li>
+                        <li>The shortest verse: “Jesus wept.” (John 11:35)</li>
+                        <li>The middle verse: Psalm 118:8 — “It is better to trust in the LORD than to put confidence in
+                            man.”</li>
+                        <li>Psalm 119 is the longest chapter; Psalm 117 is the shortest.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body fs-5">
+                    <h4 class="card-title">Famous Bible Verses:</h4>
+                    <ul style="list-style-type: square;">
+                        <li>John 3:16 – “For God so loved the world…”</li>
+                        <li>Psalm 23 – “The Lord is my shepherd…”</li>
+                        <li>Romans 8:28 – “All things work together for good…”</li>
+                        <li>Proverbs 3:5-6 – “Trust in the Lord with all your heart…”</li>
+                        <li>Psalm 119:105 –
+                            "Your word is a lamp to my feet and a light to my path."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Final Thought:</h3>
+                <p class="card-text fs-5">The Bible is God’s voice to humanity. Whether you read it for personal
+                    reflection, spiritual growth, or academic study, it has the power to enlighten, correct, and
+                    transform. As you explore its pages, you’ll find not just ancient wisdom — but eternal truth.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
