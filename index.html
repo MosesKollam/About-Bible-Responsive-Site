@@ -37,6 +37,16 @@
             border-radius: 0px;
         }
 
+        @media (max-width: 450px) {
+            table.table {
+                font-size: 0.95rem;
+            }
+
+            table.table caption {
+                font-size: 1.6rem;
+            }
+        }
+
         @media (max-width: 570px) {
             .card-title {
                 font-size: 1.3rem;
@@ -47,9 +57,95 @@
                 font-size: 0.9rem;
                 /* smaller */
             }
-            .card-img-overlay{
+
+            .card-img-overlay {
                 visibility: hidden;
             }
+        }
+
+        /* If .table-responsive is placed on the TABLE (as in your markup),
+   make it behave like the usual wrapper */
+        .table.table-responsive {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Caption (your inline style works; this centralizes it in CSS) */
+        .table caption {
+            caption-side: top;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: .75rem;
+            /* scales nicely across viewports */
+            font-size: clamp(1.4rem, 3vw + .5rem, 2.8rem);
+        }
+
+        /* Header cells */
+        .table thead th {
+            background-color: #f8f9fa;
+            /* subtle contrast */
+            font-weight: 600;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        /* Section header rows: th with colspan (e.g., "Old Testament – …") */
+        .table tbody th[colspan] {
+            background-color: #eef1f4;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        /* Book name column (scope=row) */
+        .table tbody th[scope="row"] {
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* Borders & cell alignment tweaks */
+        .table td,
+        .table th {
+            vertical-align: middle;
+            word-break: break-word;
+        }
+
+        /* Slightly soften the default border color */
+        .table.table-bordered> :not(caption)>*>* {
+            border-color: #dee2e6;
+        }
+
+        /* Small screens: gently reduce type sizes */
+        @media (max-width: 575.98px) {
+            .table.fs-5 {
+                font-size: 1rem;
+            }
+
+            .table caption {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Very small screens (≤375px): reduce a tad more */
+        @media (max-width: 375px) {
+            .table.fs-5 {
+                font-size: .95rem;
+            }
+
+            .table caption {
+                font-size: 1.4rem;
+            }
+        }
+        .table-content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .table th{
+            
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -105,7 +201,7 @@
         </div>
     </nav>
     <div class="container-outer-main">
-        <div class="card bg-dark text-white gh-card" style="position: sticky; top: 0;width: 100%;">
+        <div class="card bg-dark text-white gh-card">
             <img src="image.PNG" class="card-img" alt="...">
             <div class="card-img-overlay">
                 <h1 class="card-title">Genesis To Revelations</h1>
@@ -116,7 +212,7 @@
         </div>
 
         <div class="card">
-            <div class="card-body text-center" style="color: #5E3A87;">
+            <div class="card-body text-center" style="color: black">
                 <h1>ABOUT BIBLE</h1>
             </div>
         </div>
@@ -259,8 +355,528 @@
                     transform. As you explore its pages, you’ll find not just ancient wisdom — but eternal truth.</p>
             </div>
         </div>
+        <div class="table-content">
+            <table class="table table-responsive table-bordered fs-5">
+                <caption class="text-center" style="caption-side: top; font-size: 45px; padding-bottom: 0.5rem;">
+                    BOOKS OF THE BIBLE
+                </caption>
 
-        
+                <thead>
+                    <tr>
+                        <th scope="col">Book</th>
+                        <th scope="col">Date (Approx)</th>
+                        <th scope="col">Author (Traditionally)</th>
+                        <th scope="col">Notes</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Pentateuch -->
+                    <tr>
+                        <th colspan="4" class="text-center">Old Testament – Pentateuch</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Genesis</th>
+                        <td>1446–1406 BC</td>
+                        <td>Moses</td>
+                        <td>Creation, Patriarchs</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Exodus</th>
+                        <td>1446–1406 BC</td>
+                        <td>Moses</td>
+                        <td>Israel’s deliverance from Egypt</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Leviticus</th>
+                        <td>1445 BC</td>
+                        <td>Moses</td>
+                        <td>Priestly Laws</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Numbers</th>
+                        <td>1445–1406 BC</td>
+                        <td>Moses</td>
+                        <td>Wilderness Journey</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Deuteronomy</th>
+                        <td>1406 BC</td>
+                        <td>Moses</td>
+                        <td>Moses's final sermons</td>
+                    </tr>
+
+                    <!-- Historical Books -->
+                    <tr>
+                        <th colspan="4" class="text-center">Old Testament – Historical Books</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Joshua</th>
+                        <td>1406–1375 BC</td>
+                        <td>Joshua</td>
+                        <td>Conquest of Canaan</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Judges</th>
+                        <td>1086–1004 BC</td>
+                        <td>Samuel</td>
+                        <td>Cycles of sin and deliverance</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Ruth</th>
+                        <td>1011–931 BC</td>
+                        <td>Samuel</td>
+                        <td>Faithful foreigner</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1 Samuel</th>
+                        <td>931–722 BC</td>
+                        <td>Samuel, Gad, Nathan</td>
+                        <td>Rise of monarchy</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2 Samuel</th>
+                        <td>931–722 BC</td>
+                        <td>Samuel, Gad, Nathan</td>
+                        <td>David’s reign</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1 Kings</th>
+                        <td>561–538 BC</td>
+                        <td>Jeremiah</td>
+                        <td>Solomon & divided kingdom</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2 Kings</th>
+                        <td>561–538 BC</td>
+                        <td>Jeremiah</td>
+                        <td>Fall of Israel & Judah</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1 Chronicles</th>
+                        <td>450–425 BC</td>
+                        <td>Ezra</td>
+                        <td>Davidic line focused</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2 Chronicles</th>
+                        <td>450–425 BC</td>
+                        <td>Ezra</td>
+                        <td>History of Judah</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Ezra</th>
+                        <td>457–444 BC</td>
+                        <td>Ezra</td>
+                        <td>Return from exile</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Nehemiah</th>
+                        <td>445–425 BC</td>
+                        <td>Nehemiah</td>
+                        <td>Wall rebuilding</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Esther</th>
+                        <td>464–434 BC</td>
+                        <td>Mordecai</td>
+                        <td>Preservation of Jews</td>
+                    </tr>
+
+                    <!-- Wisdom Literature -->
+                    <tr>
+                        <th colspan="4" class="text-center">Old Testament – Poetry & Wisdom</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Job</th>
+                        <td>Unknown (possibly 2000–1800 BC)</td>
+                        <td>Unknown (possibly Moses)</td>
+                        <td>Suffering & sovereignty</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Psalms</th>
+                        <td>1440–586 BC</td>
+                        <td>David and others</td>
+                        <td>Worship and praise</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Proverbs</th>
+                        <td>970–686 BC</td>
+                        <td>Solomon and others</td>
+                        <td>Wisdom sayings</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Ecclesiastes</th>
+                        <td>935 BC</td>
+                        <td>Solomon</td>
+                        <td>Meaning of life</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Song of Songs</th>
+                        <td>965 BC</td>
+                        <td>Solomon</td>
+                        <td>Love and marriage</td>
+                    </tr>
+
+                    <!-- Major Prophets -->
+                    <tr>
+                        <th colspan="4" class="text-center">Old Testament – Major Prophets</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Isaiah</th>
+                        <td>740–680 BC</td>
+                        <td>Isaiah</td>
+                        <td>Messianic prophecies</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Jeremiah</th>
+                        <td>626–586 BC</td>
+                        <td>Jeremiah</td>
+                        <td>Judgment and hope</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Lamentations</th>
+                        <td>586 BC</td>
+                        <td>Jeremiah</td>
+                        <td>Weeping over Jerusalem</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Ezekiel</th>
+                        <td>593–571 BC</td>
+                        <td>Ezekiel</td>
+                        <td>Visions and restoration</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Daniel</th>
+                        <td>605–536 BC</td>
+                        <td>Daniel</td>
+                        <td>Prophecy & kingdoms</td>
+                    </tr>
+
+                    <!-- Minor Prophets -->
+                    <tr>
+                        <th colspan="4" class="text-center">Old Testament – Minor Prophets</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Hosea</th>
+                        <td>755–715 BC</td>
+                        <td>Hosea</td>
+                        <td>Faithful God, unfaithful Israel</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Joel</th>
+                        <td>835–796 BC</td>
+                        <td>Joel</td>
+                        <td>Day of the Lord</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Amos</th>
+                        <td>760–750 BC</td>
+                        <td>Amos</td>
+                        <td>Social justice</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Obadiah</th>
+                        <td>586 BC</td>
+                        <td>Obadiah</td>
+                        <td>Judgment on Edom</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Jonah</th>
+                        <td>760 BC</td>
+                        <td>Jonah</td>
+                        <td>God’s mercy to Nineveh</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Micah</th>
+                        <td>742–687 BC</td>
+                        <td>Micah</td>
+                        <td>Judgment & hope</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Nahum</th>
+                        <td>663–612 BC</td>
+                        <td>Nahum</td>
+                        <td>Fall of Nineveh</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Habakkuk</th>
+                        <td>609 BC</td>
+                        <td>Habakkuk</td>
+                        <td>Questioning God</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Zephaniah</th>
+                        <td>640–609 BC</td>
+                        <td>Zephaniah</td>
+                        <td>Day of the Lord</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Haggai</th>
+                        <td>520 BC</td>
+                        <td>Haggai</td>
+                        <td>Rebuild the temple</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Zechariah</th>
+                        <td>520–518 BC</td>
+                        <td>Zechariah</td>
+                        <td>Visions of hope</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Malachi</th>
+                        <td>430 BC</td>
+                        <td>Malachi</td>
+                        <td>Final Old Testament prophecy</td>
+                    </tr>
+
+                    <!-- New Testament -->
+                    <tr>
+                        <th colspan="4" class="text-center">New Testament – Gospels & Acts</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Matthew</th>
+                        <td>50–70 AD</td>
+                        <td>Matthew</td>
+                        <td>Jesus as King</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Mark</th>
+                        <td>50–60 AD</td>
+                        <td>Mark</td>
+                        <td>Jesus as Servant</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Luke</th>
+                        <td>60–61 AD</td>
+                        <td>Luke</td>
+                        <td>Jesus as Son of Man</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">John</th>
+                        <td>85–95 AD</td>
+                        <td>John</td>
+                        <td>Jesus as Son of God</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Acts</th>
+                        <td>62–64 AD</td>
+                        <td>Luke</td>
+                        <td>Early church history</td>
+                    </tr>
+
+                    <!-- Paul's Letters -->
+                    <tr>
+                        <th colspan="4" class="text-center">New Testament – Paul's Letters</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Romans</th>
+                        <td>57 AD</td>
+                        <td>Paul</td>
+                        <td>Salvation by faith</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1 Corinthians</th>
+                        <td>55 AD</td>
+                        <td>Paul</td>
+                        <td>Church problems addressed</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2 Corinthians</th>
+                        <td>56 AD</td>
+                        <td>Paul</td>
+                        <td>Paul’s defense</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Galatians</th>
+                        <td>48 AD</td>
+                        <td>Paul</td>
+                        <td>Freedom in Christ</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Ephesians</th>
+                        <td>60–61 AD</td>
+                        <td>Paul</td>
+                        <td>Church as body of Christ</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Philippians</th>
+                        <td>60–61 AD</td>
+                        <td>Paul</td>
+                        <td>Joy in Christ</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Colossians</th>
+                        <td>60–61 AD</td>
+                        <td>Paul</td>
+                        <td>Supremacy of Christ</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1 Thessalonians</th>
+                        <td>51 AD</td>
+                        <td>Paul</td>
+                        <td>Second coming</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2 Thessalonians</th>
+                        <td>51–52 AD</td>
+                        <td>Paul</td>
+                        <td>Clarifying end times</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1 Timothy</th>
+                        <td>62–64 AD</td>
+                        <td>Paul</td>
+                        <td>Pastoral advice</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2 Timothy</th>
+                        <td>67 AD</td>
+                        <td>Paul</td>
+                        <td>Final exhortations</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Titus</th>
+                        <td>62–64 AD</td>
+                        <td>Paul</td>
+                        <td>Church leadership</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Philemon</th>
+                        <td>60–61 AD</td>
+                        <td>Paul</td>
+                        <td>Forgiveness of a slave</td>
+                    </tr>
+
+                    <!-- General Epistles & Revelation -->
+                    <tr>
+                        <th colspan="4" class="text-center">New Testament – General Epistles & Revelation</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Hebrews</th>
+                        <td>64–68 AD</td>
+                        <td>Unknown (possibly Paul or Apollos)</td>
+                        <td>Christ is superior</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">James</th>
+                        <td>45–49 AD</td>
+                        <td>James (Jesus’ brother)</td>
+                        <td>Faith and works</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1 Peter</th>
+                        <td>64 AD</td>
+                        <td>Peter</td>
+                        <td>Hope in suffering</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2 Peter</th>
+                        <td>67–68 AD</td>
+                        <td>Peter</td>
+                        <td>Warning against false teachers</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1 John</th>
+                        <td>85–95 AD</td>
+                        <td>John</td>
+                        <td>Love and truth</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2 John</th>
+                        <td>85–95 AD</td>
+                        <td>John</td>
+                        <td>Truth and love</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">3 John</th>
+                        <td>85–95 AD</td>
+                        <td>John</td>
+                        <td>Church leadership</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Jude</th>
+                        <td>65–80 AD</td>
+                        <td>Jude (Jesus’ brother)</td>
+                        <td>Contend for the faith</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Revelation</th>
+                        <td>95 AD</td>
+                        <td>John</td>
+                        <td>Apocalyptic prophecy</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
     </div>
 
 
